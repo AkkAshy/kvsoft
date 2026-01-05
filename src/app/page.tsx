@@ -6,7 +6,7 @@ import { SearchSection } from '@/components/SearchSection';
 import { PropertyCard } from '@/components/PropertyCard';
 import { mockProperties, searchProperties } from '@/data/mock-properties';
 import { Property } from '@/types/property';
-import { Home, TrendingUp, Shield, Heart } from 'lucide-react';
+import { Home } from 'lucide-react';
 
 export default function HomePage() {
   const [properties, setProperties] = useState<Property[]>(mockProperties);
@@ -42,30 +42,6 @@ export default function HomePage() {
         activeFilter={activeFilter}
       />
 
-      {/* Features Section */}
-      <section className="py-12 bg-[var(--muted)]/30">
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { icon: Home, label: '500+ объявлений', desc: 'По всей стране' },
-              { icon: TrendingUp, label: 'Актуальные цены', desc: 'Обновляем ежедневно' },
-              { icon: Shield, label: 'Проверено', desc: 'Только реальные объекты' },
-              { icon: Heart, label: 'Для всех', desc: 'Найдём подходящее' },
-            ].map((feature, i) => (
-              <div
-                key={i}
-                className="text-center p-6 rounded-cozy bg-white shadow-soft"
-              >
-                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl gradient-warm flex items-center justify-center">
-                  <feature.icon className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="font-bold text-[var(--foreground)] mb-1">{feature.label}</h3>
-                <p className="text-sm text-[var(--muted-foreground)]">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Properties Grid */}
       <section className="py-16">
